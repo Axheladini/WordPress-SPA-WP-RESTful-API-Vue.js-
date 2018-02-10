@@ -23,3 +23,9 @@ function beans_child_enqueue_assets() {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
 
 }
+
+
+/*Include custom post type class fromjjgrainger (check composer.json for more) */
+include(  get_stylesheet_directory() . '/vendor/jjgrainger/wp-custom-post-type-class/src/CPT.php');
+/*File for creating custom post types */
+include(  get_stylesheet_directory() . '/include/ax_at_bees_create_custom_post_types.php');

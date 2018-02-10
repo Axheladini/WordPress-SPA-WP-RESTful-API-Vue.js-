@@ -1,0 +1,27 @@
+{
+   "name"        : "Ax at bees",
+    "description" : "Wordpress theme for coding task",
+    "authors"     : [
+        {
+            "name"    : "Agon Xheladini",
+            "email"   : "contact@agonxheladini.com",
+            "homepage": "http://www.agonxheladini.com"
+        }
+    ],
+
+    "type"        : "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url" : "http://wpackagist.org"
+        }
+    ],
+    "config"      : {
+        "vendor-dir": "vendor",
+        "secure-http" : false
+    },
+
+    "require": {
+        "jjgrainger/wp-custom-post-type-class": "dev-master"
+    }
+}
