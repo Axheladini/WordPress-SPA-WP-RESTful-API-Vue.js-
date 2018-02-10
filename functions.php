@@ -27,5 +27,9 @@ function beans_child_enqueue_assets() {
 
 /*Include custom post type class fromjjgrainger (check composer.json for more) */
 include(  get_stylesheet_directory() . '/vendor/jjgrainger/wp-custom-post-type-class/src/CPT.php');
+
 /*File for creating custom post types */
-include(  get_stylesheet_directory() . '/include/ax_at_bees_create_custom_post_types.php');
+include(  get_stylesheet_directory() . '/include/ax_at_bees_create_custom_post_type.php');
+
+/*File for creating custom post types */
+include(  get_stylesheet_directory() . '/include/ax_at_bees_create_clients_custom_fields.php');
