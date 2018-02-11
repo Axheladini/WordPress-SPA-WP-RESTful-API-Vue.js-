@@ -16,11 +16,8 @@ function register_client_custom_fields() {
 		 array(
 			'id' => 'cl_gender',
 			'label' => __( 'Gender', 'clients-textdomain' ),
-			'type' => 'select',
-			'options' => array(
-				'value_1' => __( 'Male', 'clients-textdomain' ),
-				'value_2' => __( 'Female', 'clients-textdomain' ),
-			)
+			'type' => 'text',
+			'default' => ''
 		),
 		array(
 			'id' => 'cl_phone',
@@ -55,26 +52,14 @@ function register_client_custom_fields() {
 		array(
 			'id' => 'cl_education',
 			'label' => __( 'Education background', 'clients-textdomain' ),
-			'type' => 'select',
-			'default' => 'value_1',
-			'options' => array(
-				'value_1' => __( 'High school', 'clients-textdomain' ),
-				'value_2' => __( 'Bachelors Degrees', 'clients-textdomain' ),
-				'value_3' => __( 'Masters Degrees', 'clients-textdomain' ),
-				'value_4' => __( 'Doctoral Degrees', 'clients-textdomain' ),
-				'value_4' => __( 'Postdoctoral', 'clients-textdomain' ),
-			)
+			'type' => 'text',
+			'default' => ''
 		),
 		array(
 			'id' => 'cl_contact_mode',
 			'label' => __( 'Contact mode', 'clients-textdomain' ),
-			'type' => 'select',
-			'default' => 'value_1',
-			'options' => array(
-				'value_1' => __( 'Email', 'clients-textdomain' ),
-				'value_2' => __( 'Phone', 'clients-textdomain' ),
-				'value_3' => __( 'None', 'clients-textdomain' ),
-			)
+			'type' => 'text',
+			'default' => ''
 		),
 		// ...
 	);

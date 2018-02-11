@@ -9,3 +9,14 @@ Text Domain: beans
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+#app .uk-article-title { text-align: center !important; font-size: 26px; line-height: 28px !important; margin-bottom: 6px !important;}
+#app .uk-text-lead { text-align: center !important; margin-top: 6px !important;}
+#client_reg_form .uk-grid .element_holder {text-align: center !important;}
+#client_reg_form .uk-grid .element_holder .uk-input{width:95% !important;}
+#client_reg_form .uk-grid .element_holder select{width:95% !important;}
+#client_reg_form .uk-grid .element_holder legend{text-align: left !important; padding-bottom: 3px !important; padding-top: 10px !important; width: 95% !important; margin-left: 2.8%;}
+#client_reg_form .terms_text { font-size: 12px; font-weight: 200; width: 95%; text-align: left; margin-top: 7px; margin-bottom: 4px !important; margin-left: 2.7%;}
+#client_reg_form .uk-button-secondary { width: 95% !important; color:#fff !important; padding-top: 4px !important; padding-bottom: 4px !important; background: #ffd62c; text-transform: uppercase;}
+#client_reg_form .uk-button-secondary:hover {background: #fae27d;}
+.custom-header {width: 100% !important; padding-top: 30px; padding-bottom: 30px; text-align: center;}
+.custom-header .logo { font-size: 22px; font-weight: 400;}

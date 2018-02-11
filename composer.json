@@ -22,6 +22,7 @@
     },
 
     "require": {
-        "jjgrainger/wp-custom-post-type-class": "dev-master"
+        "jjgrainger/wp-custom-post-type-class": "dev-master",
+      "twbs/bootstrap": "4.0.0-alpha.6"
     }
 }
