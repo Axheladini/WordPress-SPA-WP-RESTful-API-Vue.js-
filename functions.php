@@ -3,17 +3,6 @@
 // Include Beans. Do not remove the line below.
 require_once( get_template_directory() . '/lib/init.php' );
 
-/*
- * Remove this action and callback function if you do not whish to use LESS to style your site or overwrite UIkit variables.
- * If you are using LESS, make sure to enable development mode via the Admin->Appearance->Settings option. LESS will then be processed on the fly.
- */
-add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
-
-function beans_child_enqueue_uikit_assets() {
-
-	beans_compiler_add_fragment( 'uikit', get_stylesheet_directory_uri() . '/style.less', 'less' );
-
-}
 
 // Remove this action and callback function if you are not adding CSS in the style.css file.
 add_action( 'wp_enqueue_scripts', 'beans_child_enqueue_assets' );
@@ -21,16 +10,17 @@ add_action( 'wp_enqueue_scripts', 'beans_child_enqueue_assets' );
 function beans_child_enqueue_assets() 
 {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
-    
-    /*Enque main vue.js file*/
-wp_register_script( 'vuejs', get_stylesheet_directory_uri() . '/js/vue.min.js', 'vue.js', '2.5.13',  true );
+  
+  wp_register_script( 'vuejs', get_stylesheet_directory_uri() . '/js/vue.min.js', 'vue.js', '2.5.13',  true );
 	wp_enqueue_script( 'vuejs' );
-    
-    /*Enque main vue.js app file*/
-wp_register_script( 'app_vue_js', get_stylesheet_directory_uri() . '/js/app.js', 'vue.js', '1.0',  true );
+
+  wp_register_script( 'vue-router', get_stylesheet_directory_uri() . '/js/vue-router.js', 'vue-router', '3.0.1',  true );
+  wp_enqueue_script( 'vue-router' );
+
+  wp_register_script( 'app_vue_js', get_stylesheet_directory_uri() . '/js/app.js', 'vue.js', '1.0',  true );
 	wp_enqueue_script( 'app_vue_js' );
 
-  wp_localize_script( 'app_vue_js', 'axAtBeesSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ) ) );
+  wp_localize_script( 'app_vue_js', 'axAtBeesSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ), 'username'=>'admin', 'passwd' => 'admin' ) );
 }
 
 
@@ -46,8 +36,8 @@ include(  get_stylesheet_directory() . '/include/ax_at_bees_create_clients_custo
 /**
  * Add REST API support to an already registered post type.
  */
-add_action( 'init', 'my_custom_post_type_rest_support', 25 );
-function my_custom_post_type_rest_support() {
+add_action( 'init', 'ax_at_bees_post_type_rest_support', 25 );
+function ax_at_bees_post_type_rest_support() {
   global $wp_post_types;
  
   //be sure to set this to the name of your post type!
@@ -74,6 +64,7 @@ function ax_at_beans_enqueue_uikit_components() {
     beans_uikit_enqueue_components( array( 'datepicker' ), 'add-ons' );
     beans_uikit_enqueue_components( array( 'grid' ), 'add-ons' );
     beans_uikit_enqueue_components( array( 'icon' ), 'add-ons' );
+    beans_uikit_enqueue_components( array( 'spinner' ), 'add-ons' );
 
 }
 
@@ -90,10 +81,7 @@ function add_custom_header() {
     echo $bees_header;
 
 }
-
-
-
-
+// Modify defalut Beans footer
 beans_modify_action_callback( 'beans_footer_content', 'beans_child_footer_content' );
 function beans_child_footer_content() 
 {

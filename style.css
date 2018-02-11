@@ -20,3 +20,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #client_reg_form .uk-button-secondary:hover {background: #fae27d;}
 .custom-header {width: 100% !important; padding-top: 30px; padding-bottom: 30px; text-align: center;}
 .custom-header .logo { font-size: 22px; font-weight: 400;}
+.loader{display: none;}
+.result_holder {text-align: center !important; padding-top: 20px;}
+.respond_danger {display: none;} 
+.respond_success {display: none;}
+.uk-navbar { text-align: center !important; }
+.uk-navbar-nav {float: none !important; display: block;}

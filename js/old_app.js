@@ -84,6 +84,9 @@ var app = new Vue({
   }
 
 });
+
+
+
 jQuery( document ).ready(function() {
 //Find country from ip
 jQuery.getJSON("http://freegeoip.net/json/", function (data) {
