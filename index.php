@@ -1,15 +1,29 @@
 <?php  get_header(); ?> 
 
-
-
 <div id="app">
+ <nav class="uk-navbar-container main-menu" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li><router-link to="/form">Register</router-link></li>
+            <li><router-link to="/clients">Clients</router-link></li>
+        </ul>
+    </div>
+</nav>
+  
+  
+  
+  <router-view></router-view>
 
-<article class="uk-article">
+</div>
+
+<!-- Registration form template starts here -->
+<script type="text/x-template" id="registration-form">
+<div class="reg_holder">
+  <article class="uk-article">
 <h1 class="uk-article-title">Create your Bees Account</h1>
 <p class="uk-text-lead">Sign up and start managing your account today</p>
 </article>
-<hr style="margin-bottom: 25px !important;">
-<form class="client_reg_form" id="client_reg_form">
+<form class="client_reg_form" id="client_reg_form" name="client_reg_form">
   <div class="uk-grid">
         <div class="uk-width-1-2 element_holder">
             <legend>Full Name</legend>
@@ -53,15 +67,11 @@
                    required="" 
                    name="cl_address">
         </div>
-        <div class="uk-width-1-2 element_holder">
+        <div class="uk-width-1-2 element_holder uk-form-selec" data-uk-form-select>
             <legend>Nationality</legend>
-            <input  
-                   type="text"
-                   placeholder="Country name"
-                   class="uk-input uk-form-width-medium cl_nationality1"
-                   name="cl_nationality"
-                   v-model="post.cl_nationality"
-                   id="cl_nationality" >
+            <select v-model="post.cl_nationality">
+              <option v-for="country in countries" value="{{ country.name }}">{{ country.name }}</option>
+            </select>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Date of birth</legend>
@@ -100,18 +110,48 @@
 </form>
 <div class="uk-article result_holder">
 
-<img src="<?php echo site_url();?>/wp-content/themes/ax-at-bees/assets/loader.svg" class="loader">
+  <img src="<?php echo site_url();?>/wp-content/themes/ax-at-bees/assets/loader.svg" class="loader">
+  <p class="uk-text-lead respond_success uk-text-success">Thank you for registering to Bees client database. Please enjoy all our services!</p>
+  <p class="uk-text-lead respond_danger uk-text-danger">There was a problem, please try again or contact our support!</p>
 
-<p class="uk-text-lead respond_success uk-text-success">Thank you for registering to Bees client database. Please enjoy all our services!</p>
-<p class="uk-text-lead respond_danger uk-text-danger">There was a problem, please try again or contact our support!</p>
-<p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
-    <ul>
-      <li v-for="error in errors">{{ error }}</li>
-    </ul>
-  </p>
 </div>
 <hr style="margin-top: 25px !important;">
 </div>
+</div>
+</script>
+<!-- Registration form template ends here here -->
 
+<!-- Clients template starts here --> 
+<script type="text/x-template" id="clients-holder">
+
+<div class="clients_holder">
+  <article class="uk-article" style="padding-bottom: 25px;">
+   <h1 class="uk-article-title">List of all Bees clients!</h1>
+    <p class="uk-text-lead">We do values for our clients therefore we value each one of them.</p>
+</article>
+<div class="uk-grid client" v-for="client in clients">
+   <div class="uk-width-1-4 field_desc">Client Name</div>
+   <div class="uk-width-2-3 field_value">{{ client.title.rendered }}</div>
+   <div class="uk-width-1-4 field_desc">Gender</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_gender[0] }}</div>
+   <div class="uk-width-1-4 field_desc">Phone</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_phone[0] }}</div>
+   <div class="uk-width-1-4 field_desc">Email</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_email[0] }}</div>
+   <div class="uk-width-1-4 field_desc">Address</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_address[0] }}</div>
+   <div class="uk-width-1-4 field_desc">Nationality</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_nationality[0] }}</div>
+   <div class="uk-width-1-4 field_desc">Date of birth</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_date_of_birth[0]  }}</div>
+   <div class="uk-width-1-4 field_desc">Education</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_education[0] }}</div>
+   <div class="uk-width-1-4 field_desc">Contact mode</div>
+   <div class="uk-width-2-3 field_value">{{ client.cl_contact_mode[0] }}</div>
+</div>
+
+
+</div>
+</script>
+<!-- Clients template ends here-->
 <?php get_footer(); ?>

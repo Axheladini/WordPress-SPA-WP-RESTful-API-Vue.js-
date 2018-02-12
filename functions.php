@@ -31,7 +31,7 @@ include(  get_stylesheet_directory() . '/include/ax_at_bees_create_custom_post_t
 /*File for creating custom post types */
 include(  get_stylesheet_directory() . '/include/ax_at_bees_create_clients_custom_fields.php');
 /*Register Client custom fields to REST API responses for read write and write */
-include(  get_stylesheet_directory() . '/include/ax_at_bees_create_clients_custom_endpoint.php');
+include(  get_stylesheet_directory() . '/include/ax_at_bees_register_client_custom_fileds_rest.php');
 
 /**
  * Add REST API support to an already registered post type.
@@ -76,7 +76,8 @@ beans_modify_action( 'beans_header_partial_template', 'beans_site_prepend_markup
 function add_custom_header() {
 
     // construct your header here
-    $bees_header = '<header class="custom-header"><div class="logo"><a href="#"><img src="https://artbees.net/wp-content/themes/artbees/img/logo.svg"></div></a></header>';
+    $bees_header = '<header class="custom-header"><div class="logo"><a href="#">
+    <img src="'.site_url().'/wp-content/themes/ax-at-bees/assets/logo.svg"></div></a></header>';
 
     echo $bees_header;
 

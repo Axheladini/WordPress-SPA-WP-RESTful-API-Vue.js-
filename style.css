@@ -3,7 +3,7 @@ Theme Name: AX at bees
 Description: Beans child theme for the bees test project
 Author: Agon Xheladini
 Author URI: http://www.agonxheladini.com
-Template: beans
+Template: tm-beans
 Version: 1.0.0
 Text Domain: beans
 License: GNU General Public License v2 or later
@@ -16,8 +16,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #client_reg_form .uk-grid .element_holder select{width:95% !important;}
 #client_reg_form .uk-grid .element_holder legend{text-align: left !important; padding-bottom: 3px !important; padding-top: 10px !important; width: 95% !important; margin-left: 2.8%;}
 #client_reg_form .terms_text { font-size: 12px; font-weight: 200; width: 95%; text-align: left; margin-top: 7px; margin-bottom: 4px !important; margin-left: 2.7%;}
-#client_reg_form .uk-button-secondary { width: 95% !important; color:#fff !important; padding-top: 4px !important; padding-bottom: 4px !important; background: #ffd62c; text-transform: uppercase;}
-#client_reg_form .uk-button-secondary:hover {background: #fae27d;}
+#client_reg_form .uk-button-secondary { width: 95% !important; color:#fff !important; padding-top: 4px !important; padding-bottom: 4px !important; background: #2286b8; text-transform: uppercase;}
+#client_reg_form .uk-button-secondary { width: 95% !important; color:#fff !important; padding-top: 4px !important; padding-bottom: 4px !important; text-transform: uppercase;}
+#client_reg_form .uk-button-secondary:hover {background: #2489cc;}
 .custom-header {width: 100% !important; padding-top: 30px; padding-bottom: 30px; text-align: center;}
 .custom-header .logo { font-size: 22px; font-weight: 400;}
 .loader{display: none;}
@@ -26,3 +27,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .respond_success {display: none;}
 .uk-navbar { text-align: center !important; }
 .uk-navbar-nav {float: none !important; display: block;}
+.clients_holder{padding-top: 15px; padding-bottom: 15px;}
+.clients_holder .client{ border-bottom: 1px  solid #d8d7d5 !important; padding-top: 15px; padding-bottom: 15px; margin-top: 0px !important;}
+.clients_holder .field_desc {color: #7a7a7a !important; border-right: 1px solid #d8d7d5 !important; line-height: 20px !important; margin-bottom: 4px; margin-top: 4px; border-bottom: 1px solid #f0f0f0;}
+.clients_holder .field_value { color: #000000 !important; line-height: 20px !important; margin-bottom: 4px; border-bottom: 1px solid #f0f0f0; margin-top: 4px;}
+.main-menu { width: 100% !important; margin-bottom: 0px; margin-top: 0px; text-align: center; position: relative; overflow: auto; }
+.main-menu .uk-navbar-nav {overflow: auto; position: relative; height: auto; text-align: center;}
+.main-menu .uk-navbar-nav li { width: auto; display: inline-block; background: #e2e1e1;}
+.main-menu .uk-navbar-nav li > .router-link-active { background: #ffd62c !important; }
+.main-menu .uk-navbar-nav li > .router-link-active:hover { background: #f9e17d !important; }
+.main-menu .uk-navbar-nav li:nth-child(2) { margin-left: 7px !important; }
