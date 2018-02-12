@@ -15,7 +15,7 @@ const Form = Vue.component('form', {
         return {
             countries:[],
             post:{
-                 title: { rendered: 'Agon' },
+                 title: { rendered: '' },
                  cl_gender:[],
                  cl_phone: [],
                  cl_email: [],
