@@ -81,6 +81,8 @@ const Form = Vue.component('form', {
                                               setTimeout(function(){
                          jQuery(".respond_success").hide();
                         }, 6000);
+
+                        jQuery('#client_reg_form').trigger("reset");
                      }
                      else if(response.title.rendered == '')
                      {
@@ -90,6 +92,8 @@ const Form = Vue.component('form', {
                         setTimeout(function(){
                          jQuery(".respond_danger").hide();
                         }, 6000);
+
+
                      }
                 } );
 
