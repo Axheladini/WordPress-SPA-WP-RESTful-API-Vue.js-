@@ -32,6 +32,7 @@
                    placeholder="Name & surname"
                    v-model="post.title.rendered"
                    name="cl_name">
+          <p class="name_error">Name is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Gender</legend>
@@ -39,6 +40,7 @@
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
+          <p class="name_error">Gender is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Phone</legend>
@@ -46,8 +48,8 @@
                    type="tel" 
                    placeholder="Enter your phone number"
                    v-model="post.cl_phone"
-                   required="" 
                    name="cl_phone">
+              <p class="phone_error">Phone is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Email</legend>
@@ -55,8 +57,9 @@
                    type="email" 
                    placeholder="sample@email.com"
                    v-model="post.cl_email"
-                   required="" 
                    name="cl_email">
+            <p class="email_error">Email is required!</p>
+            <p class="valid_email_error">Valid email required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Address</legend>
@@ -64,14 +67,15 @@
                    type="text" 
                    placeholder="Your Address"
                    v-model="post.cl_address"
-                   required="" 
                    name="cl_address">
+            <p class="address_error">Address is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder uk-form-selec" data-uk-form-select>
             <legend>Nationality</legend>
             <select v-model="post.cl_nationality">
               <option v-for="country in countries" :value="country.name">{{ country.name }}</option>
             </select>
+            <p class="nation_error">Nationality is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Date of birth</legend>
@@ -81,25 +85,27 @@
                    placeholder="dd.mm.yyyy"
                    class="uk-input uk-form-width-medium cl_date_of_birth"
                    v-model="post.cl_date_of_birth"
-                   name="cl_date_of_birth" 
-                   required="" >
+                   name="cl_date_of_birth"  >
+            <p class="dob_error">Date of birth is required!</p>
         </div>
          <div class="uk-width-1-2 element_holder">
             <legend>Education</legend>
-            <select class="uk-select" id="cl_education" name="cl_education" required="" v-model="post.cl_education">
+            <select class="uk-select" id="cl_education" name="cl_education" v-model="post.cl_education">
                 <option value="High school">High school</option>
                 <option value="Bachelors Degree">Bachelors Degree</option>
                 <option value="Masters Degree">Masters Degree</option>
                 <option value="Doctoral Degree">Doctoral Degree</option>
                 <option value="Postdoctoral">Postdoctoral</option>
             </select>
+            <p class="education_error">Education is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <legend>Contact mode</legend>
-           <select class="uk-select" id="cl_contact_mode" name="cl_contact_mode" required="" v-model="post.cl_contact_mode">
+           <select class="uk-select" id="cl_contact_mode" name="cl_contact_mode" v-model="post.cl_contact_mode">
                 <option value="Phone">Phone</option>
                 <option value="Email">Email</option>
             </select>
+            <p class="contact_error">Contact method is required!</p>
         </div>
         <div class="uk-width-1-2 element_holder">
             <p class="terms_text">By clicking, you agree to our <a href="">Terms & Conditions</a> and <a href="">Privacy Policy.</a></p>

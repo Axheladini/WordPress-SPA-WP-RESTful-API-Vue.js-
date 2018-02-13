@@ -3,8 +3,8 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 
 /*Basic configuration data*/
 var config = {
-    url: "http://54.201.99.203/bees/index.php/wp-json/wp/v2/client", // EC2 Server
-   // url: axAtBeesSettings.root+"wp/v2/client", //Local Server
+   
+    url: axAtBeesSettings.root+"wp/v2/client", //Local Server
     user:axAtBeesSettings.username,
     pass: axAtBeesSettings.passwd
 };
@@ -16,6 +16,7 @@ const Form = Vue.component('form', {
         return {
             countries:[],
             post:{
+                 error:'',
                  title: { rendered: '' },
                  cl_gender:[],
                  cl_phone: [],
@@ -32,10 +33,25 @@ const Form = Vue.component('form', {
             this.getCountries()
         },
          methods:{
-    clientRegister: function(e){    
-     e.preventDefault();
-     
-     jQuery(".loader").show();
+    clientRegister: function(e){  
+    
+     /* Validation starts her */
+     if(this.post.title.rendered == '') {jQuery('.name_error').show(); this.error = true;} else {jQuery('.name_error').hide(); this.error = false;}
+     if(this.post.cl_gender == '') { jQuery('.gender_error').show(); this.error = true;}else {jQuery('.gender_error').hide(); this.error = false;}
+     if(this.post.cl_phone == '') { jQuery('.phone_error').show(); this.error = true;} else {jQuery('.phone_error').hide(); this.error = false;}
+     if(this.post.cl_email == '') { jQuery('.email_error').show(); this.error = true;} else {jQuery('.email_error').hide(); this.error = false;}
+     if(!this.validEmail(this.post.cl_email)){ jQuery('.valid_email_error').show(); this.error = true;} else {jQuery('.valid_email_error').hide(); this.error = false;}
+     if(this.post.cl_address == '') { jQuery('.address_error').show(); this.error = true;} else {jQuery('.address_error').hide(); this.error = false;}
+     if(this.post.cl_nationality == '') { jQuery('.nation_error').show(); this.error = true;} else {jQuery('.nation_error').hide(); this.error = false;}
+     if(this.post.cl_date_of_birth == '') { jQuery('.dob_error').show(); this.error = true;} else {jQuery('.dob_error').hide(); this.error = false;}
+     if(this.post.cl_education == '') { jQuery('.education_error').show(); this.error = true;} else {jQuery('.education_error').hide(); this.error = false;}
+     if(this.post.cl_contact_mode == '') { jQuery('.contact_error').show(); this.error = true;} else {jQuery('.contact_error').hide(); this.error = false;}
+     if(this.error == false)
+     {
+
+       e.preventDefault();
+       jQuery(".loader").show();  
+
      jQuery.ajax( {
                url: config.url,
                     method: 'POST',
@@ -62,8 +78,7 @@ const Form = Vue.component('form', {
                      {
                        jQuery(".respond_success").show();
                        jQuery(".respond_danger").hide();
-                       
-                       setTimeout(function(){
+                                              setTimeout(function(){
                          jQuery(".respond_success").hide();
                         }, 6000);
                      }
@@ -77,8 +92,13 @@ const Form = Vue.component('form', {
                         }, 6000);
                      }
                 } );
-     },
 
+            }
+     },
+     validEmail:function(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+    },
      /* Function to get list of all countries*/
      getCountries: function(){
        
