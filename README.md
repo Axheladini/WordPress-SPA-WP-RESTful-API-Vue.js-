@@ -11,7 +11,7 @@ AWS free tier EC2 instance link<br>
 ## Requirements and Instalation
 
 <b>1.</b> This app is build as child theme of Beans theme. Therefore as a first step you must install Beans theme.
-The link to Beasn GitHub repository can be found here: 
+The GitHub repository can be found here: 
 
 [https://github.com/Getbeans/Beans](https://github.com/Getbeans/Beans)
 
