@@ -19,7 +19,8 @@ The GitHub repository can be found here:
 
 [https://github.com/WP-API/Basic-Auth](https://github.com/WP-API/Basic-Auth)
 
-<b>3.</b> To speed up the proceess of coding and structuring the APP I have used a read mady Custom Post Typs (CPT) class by <b>jjgrainger</b> for creating the CPT 'Client'. I have used composer (it was a point on coding task document delivered by artbees). The repo for this class can be found here: 
+<b>3.</b> To speed up the proceess of coding and structuring the APP I have used a read mady Custom Post Typs (CPT) class by <b>jjgrainger</b> for creating the CPT 'Client'. I have used composer (it was a point on coding task document delivered by artbees). 
+The repo for this class can be found here: 
 
 [https://github.com/jjgrainger/wp-custom-post-type-class](https://github.com/jjgrainger/wp-custom-post-type-class)
 
@@ -30,7 +31,10 @@ muthentication method. Since it is test project i have used Basic Authentication
 wp_localize_script( 'app_vue_js', 'axAtBeesSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ), 'username'=>'admin', 'passwd' => 'admin' ) );
 ```
 
-5. The last step is to upload the child theme (ax-at-bees) or clone this repo to your Wordpress theme directory.  
+<b>5</b>. The last step is to upload the child theme (ax-at-bees) or clone this repo to your Wordpress theme directory.  
+
+<b>6</b>. After you pass all steps dont forget to update <b>Composer</b>. 
+
 
 * Developed under Wordpress version: 4.9.4
 * Vue.js v2.5.13 
