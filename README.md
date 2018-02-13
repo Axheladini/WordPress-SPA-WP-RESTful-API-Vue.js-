@@ -1,4 +1,5 @@
-# WORDPRESS SPA app ##Client registration and client list view (Coding task from artbees.net)
+# WORDPRESS SPA app 
+##Client registration and client list view (Coding task from artbees.net)
 
 This small APP is based on Wordpress REST API technology and Vue.js framework for frontend.  
 
