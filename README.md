@@ -1,4 +1,5 @@
-# WordPress SPA APP - Creat and Read of the small CRUD (Coding task from artbees.net)
+# WordPress SPA APP - Creat and Read of the small CRUD 
+<b><i>Coding task from artbees.net</i></b>
 
 This small APP is based on Wordpress REST API technology and Vue.js framework for frontend.  
 
