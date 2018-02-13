@@ -3,7 +3,8 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 
 /*Basic configuration data*/
 var config = {
-    url: axAtBeesSettings.root+"wp/v2/client",
+    url: "http://54.201.99.203/bees/index.php/wp-json/wp/v2/client", // EC2 Server
+   // url: axAtBeesSettings.root+"wp/v2/client", //Local Server
     user:axAtBeesSettings.username,
     pass: axAtBeesSettings.passwd
 };

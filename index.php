@@ -70,7 +70,7 @@
         <div class="uk-width-1-2 element_holder uk-form-selec" data-uk-form-select>
             <legend>Nationality</legend>
             <select v-model="post.cl_nationality">
-              <option v-for="country in countries" value="{{ country.name }}">{{ country.name }}</option>
+              <option v-for="country in countries" :value="country.name">{{ country.name }}</option>
             </select>
         </div>
         <div class="uk-width-1-2 element_holder">
