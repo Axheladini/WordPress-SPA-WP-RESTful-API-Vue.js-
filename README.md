@@ -15,7 +15,7 @@ The GitHub repository can be found here:
 
 [https://github.com/Getbeans/Beans](https://github.com/Getbeans/Beans)
 
-<b>2.</b> When working with Wordpress REST API you must use <b>JSON Basic Authentication</b> plugin. The plugin repo could be found on this link: 
+<b>2.</b> When working with Wordpress REST API you need to install and activate <b>JSON Basic Authentication</b> plugin. The plugin repo could be found on this link: 
 
 [https://github.com/WP-API/Basic-Auth](https://github.com/WP-API/Basic-Auth)
 
