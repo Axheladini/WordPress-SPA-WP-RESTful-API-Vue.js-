@@ -3,7 +3,7 @@
 <b><i>Coding task from artbees.net</i></b>
 
 
-This small APP is based on Wordpress REST API technology and Vue.js framework for frontend.  
+This small APP is based on Wordpress REST API technology for backend and Vue.js framework for frontend.  
 
 AWS free tier EC2 instance link<br>
 [http://54.201.99.203/bees](http://54.201.99.203/bees)
@@ -24,8 +24,8 @@ The repo for this class can be found here:
 
 [https://github.com/jjgrainger/wp-custom-post-type-class](https://github.com/jjgrainger/wp-custom-post-type-class)
 
-<b>4.</b> Since with this app a client can use a form and register to  our platform by suing WP REST API there is a need for 
-muthentication method. Since it is test project i have used Basic Authentication method. For enterprise usage I strongly advice OAuth2 as Authentication method for WP REST API. For this reason in the child theme directory inside <b>include</b> directory look for a file called <i>ax_at_beas_enqueue_assets.php</i>, on line 23 replace username and password with your user information. 
+<b>4.</b> Since with this app a client can use a form to register to our platform by using WP REST API, there is a need for 
+authentication method. Since it is test project i have used Basic Authentication method. For enterprise I strongly advice OAuth2 as Authentication method for WP REST API. For this reason in the child theme directory inside <b>include</b> directory look for a file called <i>ax_at_beas_enqueue_assets.php</i>, on line 23 replace username and password with your user information. 
 
 ```
 wp_localize_script( 'app_vue_js', 'axAtBeesSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ), 'username'=>'admin', 'passwd' => 'admin' ) );
