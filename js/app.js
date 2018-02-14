@@ -35,7 +35,7 @@ const Form = Vue.component('form', {
          methods:{
     clientRegister: function(e){  
     
-     /* Validation starts her */
+     /* Validation starts here */
      if(this.post.title.rendered == '') {jQuery('.name_error').show(); this.error = true;} else {jQuery('.name_error').hide(); this.error = false;}
      if(this.post.cl_gender == '') { jQuery('.gender_error').show(); this.error = true;}else {jQuery('.gender_error').hide(); this.error = false;}
      if(this.post.cl_phone == '') { jQuery('.phone_error').show(); this.error = true;} else {jQuery('.phone_error').hide(); this.error = false;}
