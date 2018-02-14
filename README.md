@@ -30,9 +30,11 @@ authentication method. Since it is test project i have used Basic Authentication
 ```
 wp_localize_script( 'app_vue_js', 'axAtBeesSettings', array( 'root' => esc_url_raw( rest_url() ), 'nonce' => wp_create_nonce( 'wp_rest' ), 'username'=>'admin', 'passwd' => 'admin' ) );
 ```
-<b>5</b>. At this stage you neeed to update or intsall <b>Composer</b>. 
+<b>5</b>. Upload the child theme (ax-at-bees) or clone this repo to your Wordpress theme directory.  
 
-<b>6</b>. The last step is to upload the child theme (ax-at-bees) or clone this repo to your Wordpress theme directory.  
+<b>6</b>. At this stage you neeed to update or intsall <b>Composer</b>. 
+
+
 
 
 * Developed under Wordpress version: 4.9.4
