@@ -51,6 +51,7 @@ const Form = Vue.component('form', {
     
      e.preventDefault()
     
+
      if(this.errors.length > 0) 
       { this.errors = []; this.validation = false;}
      else if(this.errors.length == 0) 
@@ -60,11 +61,13 @@ const Form = Vue.component('form', {
       if (this.validation == true)
       {
       
-       this.errors = [];
-        
-      jQuery(".loader").show();  
+       this.errors = []; 
+       jQuery(".loader").show();  
 
-      jQuery.ajax( {
+     
+
+     jQuery.ajax( {
+
                url: config.url,
                     method: 'POST',
                     beforeSend: function ( xhr ) 
