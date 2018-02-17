@@ -3,7 +3,8 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 
 /*Basic configuration data*/
 var config = {
-   
+    
+    //url: "http://54.201.99.203/bees/index.php/wp-json/wp/v2/client", // EC2 Server
     url: axAtBeesSettings.root+"wp/v2/client", //Local Server
     user:axAtBeesSettings.username,
     pass: axAtBeesSettings.passwd
@@ -15,8 +16,9 @@ const Form = Vue.component('form', {
     data:function() {
         return {
             countries:[],
+            errors:[],
+            validation: false,
             post:{
-                 error:'',
                  title: { rendered: '' },
                  cl_gender:[],
                  cl_phone: [],
@@ -34,25 +36,35 @@ const Form = Vue.component('form', {
         },
          methods:{
     clientRegister: function(e){  
+     
+     /* Validation starts here */
+     if(this.post.title.rendered == '') {jQuery('.name_error').show(); this.errors.push("title");} else {jQuery('.name_error').hide();}
+     if(this.post.cl_gender == '') { jQuery('.gender_error').show(); this.errors.push("gender");} else {jQuery('.gender_error').hide();}
+     if(this.post.cl_phone == '') { jQuery('.phone_error').show(); this.errors.push("phone");} else {jQuery('.phone_error').hide();}
+     if(this.post.cl_email == '') { jQuery('.email_error').show(); this.errors.push("email");} else {jQuery('.email_error').hide();}
+     if(!this.validEmail(this.post.cl_email)){ jQuery('.valid_email_error').show(); this.errors.push("email_");} else {jQuery('.valid_email_error').hide();}
+     if(this.post.cl_address == '') { jQuery('.address_error').show(); this.errors.push("address");} else {jQuery('.address_error').hide();}
+     if(this.post.cl_nationality == '') { jQuery('.nation_error').show(); this.errors.push("nationality");} else {jQuery('.nation_error').hide();}
+     if(this.post.cl_date_of_birth == '') { jQuery('.dob_error').show(); this.errors.push("dob");} else {jQuery('.dob_error').hide();}
+     if(this.post.cl_education == '') { jQuery('.education_error').show(); this.errors.push("education");} else {jQuery('.education_error').hide();}
+     if(this.post.cl_contact_mode == '') { jQuery('.contact_error').show(); this.errors.push("contact");} else {jQuery('.contact_error').hide();}
     
-     /* Validation starts her */
-     if(this.post.title.rendered == '') {jQuery('.name_error').show(); this.error = true;} else {jQuery('.name_error').hide(); this.error = false;}
-     if(this.post.cl_gender == '') { jQuery('.gender_error').show(); this.error = true;}else {jQuery('.gender_error').hide(); this.error = false;}
-     if(this.post.cl_phone == '') { jQuery('.phone_error').show(); this.error = true;} else {jQuery('.phone_error').hide(); this.error = false;}
-     if(this.post.cl_email == '') { jQuery('.email_error').show(); this.error = true;} else {jQuery('.email_error').hide(); this.error = false;}
-     if(!this.validEmail(this.post.cl_email)){ jQuery('.valid_email_error').show(); this.error = true;} else {jQuery('.valid_email_error').hide(); this.error = false;}
-     if(this.post.cl_address == '') { jQuery('.address_error').show(); this.error = true;} else {jQuery('.address_error').hide(); this.error = false;}
-     if(this.post.cl_nationality == '') { jQuery('.nation_error').show(); this.error = true;} else {jQuery('.nation_error').hide(); this.error = false;}
-     if(this.post.cl_date_of_birth == '') { jQuery('.dob_error').show(); this.error = true;} else {jQuery('.dob_error').hide(); this.error = false;}
-     if(this.post.cl_education == '') { jQuery('.education_error').show(); this.error = true;} else {jQuery('.education_error').hide(); this.error = false;}
-     if(this.post.cl_contact_mode == '') { jQuery('.contact_error').show(); this.error = true;} else {jQuery('.contact_error').hide(); this.error = false;}
-     if(this.error == false)
-     {
+     e.preventDefault()
+    
+     if(this.errors.length > 0) 
+      { this.errors = []; this.validation = false;}
+     else if(this.errors.length == 0) 
+      { this.validation = true; }  
+     /* Validation ends here */
 
-       e.preventDefault();
-       jQuery(".loader").show();  
+      if (this.validation == true)
+      {
+      
+       this.errors = [];
+        
+      jQuery(".loader").show();  
 
-     jQuery.ajax( {
+      jQuery.ajax( {
                url: config.url,
                     method: 'POST',
                     beforeSend: function ( xhr ) 
