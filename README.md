@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # WordPress SPA APP - Creat and Read of the small CRUD 
 <b><i>Coding task from artbees.net</i></b>
 
