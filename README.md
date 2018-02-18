@@ -17,7 +17,7 @@ The GitHub repository can be found here:
 
 [https://github.com/WP-API/Basic-Auth](https://github.com/WP-API/Basic-Auth)
 
-<b>3.</b> To speed up the proceess of coding and structuring the APP I have used a read mady Custom Post Typs (CPT) class by <b>jjgrainger</b> for creating the CPT 'Client'. I have used composer. 
+<b>3.</b> To speed up the proceess of coding and structuring the APP I have used a ready made Custom Post Typs (CPT) class by <b>jjgrainger</b> for creating the CPT 'Client'. I have used composer. 
 The repo for this class can be found here: 
 
 [https://github.com/jjgrainger/wp-custom-post-type-class](https://github.com/jjgrainger/wp-custom-post-type-class)
