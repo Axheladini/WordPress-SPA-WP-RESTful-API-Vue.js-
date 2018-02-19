@@ -5,9 +5,9 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 var config = {
     
     //url: "http://54.201.99.203/bees/index.php/wp-json/wp/v2/client", // EC2 Server
-    url: axAtBeesSettings.root+"wp/v2/client", //Local Server
-    user:axAtBeesSettings.username,
-    pass: axAtBeesSettings.passwd
+    url: axAtSettings.root+"wp/v2/client", //Local Server
+    user:axAtSettings.username,
+    pass: axAtSettings.passwd
 };
 
 /*Define Form Component*/
