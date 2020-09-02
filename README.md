@@ -4,7 +4,7 @@
 This small APP is based on Wordpress REST API technology and Vue.js framework for frontend.  
 
 AWS free tier EC2 instance link<br>
-[http://54.201.99.203/wp-spa](http://54.201.99.203/wp-spa)
+[https://wp-api.agonxheladini.com/](https://wp-api.agonxheladini.com/)
 
 ## Requirements and Instalation
 
